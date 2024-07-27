@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../hooks';
+import { useAuth } from 'hooks';
 import css from './Navigation.module.css';
 
 export const Navigation = () => {
@@ -18,4 +18,3 @@ export const Navigation = () => {
     </nav>
   );
 };
-

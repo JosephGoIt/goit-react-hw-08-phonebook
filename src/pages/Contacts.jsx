@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
-import ContactForm from '../components/ContactForm';
-import ContactList from '../components/ContactList';
-import Filter from '../components/Filter';
+import ContactForm from '../components/ContactForm/ContactForm';
+import ContactList from '../components/ContactList/ContactList';
+import Filter from '../components/Filter/Filter';
 import Section from '../components/Section';
 import { store } from '../redux/store';
-import { fetchContacts } from '../redux/slices/contactsSlice';
+import { fetchContacts } from '../redux/contacts/contactsSlice';
 
 export const AppsOrig = () => {
   useEffect(() => {
@@ -13,7 +12,6 @@ export const AppsOrig = () => {
   }, []);
 
   return (
-    <Provider store={store}>
       <div>
         <Section title="Phonebook">
           <ContactForm />
@@ -23,6 +21,5 @@ export const AppsOrig = () => {
           <ContactList />
         </Section>
       </div>
-    </Provider>
   );
 };
