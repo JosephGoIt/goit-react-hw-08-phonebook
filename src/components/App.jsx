@@ -14,11 +14,15 @@ const AppsOrigPage = lazy(() => import('../pages/AppsOrig'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing } = useAuth();
+  const { isRefreshing, token } = useAuth();
 
   useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+    if (token) {
+      dispatch(refreshUser()).catch((error) => {
+        console.error("Failed to refresh user", error);
+      });
+    }
+  }, [dispatch, token]);
 
   return isRefreshing ? (
     <b>Refreshing user...</b>
