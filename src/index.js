@@ -8,7 +8,6 @@ import { store, persistor } from './redux/store';
 import 'modern-normalize';
 import './index.css';
 
-// Set the basename to match your GitHub Pages repository name
 const basename = '/goit-react-hw-08-phonebook';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

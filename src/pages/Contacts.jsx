@@ -6,7 +6,7 @@ import Section from '../components/Section';
 import { store } from '../redux/store';
 import { fetchContacts } from '../redux/contacts/contactsSlice';
 
-export const AppsOrig = () => {
+export const Contacts = () => {
   useEffect(() => {
     store.dispatch(fetchContacts());
   }, []);
