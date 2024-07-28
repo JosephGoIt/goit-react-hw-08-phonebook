@@ -6,6 +6,7 @@ import { PrivateRoute } from './PrivateRoute/PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { refreshUser } from '../redux/auth/operations';
 import { useAuth } from 'hooks';
+import { HelmetProvider } from 'react-helmet-async';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -25,6 +26,7 @@ export const App = () => {
   }
 
   return (
+    <HelmetProvider>
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -52,5 +54,6 @@ export const App = () => {
         </Route>
       </Routes>
     </Suspense>
+    </HelmetProvider>
   );
 };
