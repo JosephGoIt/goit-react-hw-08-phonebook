@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ContactListItem from '../ContactListItem/ContactListItem';
-import { getContacts, getFilter, getIsLoading, getError } from '../../redux/selectors';
+import { getContacts, getFilter, getIsLoading, getError } from '../../redux/contacts/selectors';
 import { deleteContact } from '../../redux/contacts/contactsSlice';
 
 const ContactList = () => {
